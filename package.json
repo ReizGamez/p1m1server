@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "with-nodemon": "nodemon --watch ./ --watch ./routes server.js",
+    "debug": "node-debug server.js",
+    "node-only": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "couchbase": "^2.0.8",
+    "express": "^4.13.0",
+    "morgan": "^1.6.0"
+  }
+}
