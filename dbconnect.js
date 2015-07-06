@@ -11,14 +11,14 @@ function queryConstructor (bucketName, viewName){
   return viewQuery.from(bucketName, viewName);
 }
 
-function queryExecuter (input, callback, error){
+function queryExecuter (input, error, callback){
   var constructedQuery = queryConstructor(input.document, input.view);
   if(input.viewKey){
     constructedQuery = constructedQuery.key(input.viewKey);
   }
   input.bucket.query(constructedQuery, function(dbError, results) {
     if(dbError) {
-      error(dbError, constructedQuery);
+      error(dbError);
       return;
     }
     callback(results);
