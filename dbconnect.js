@@ -31,7 +31,7 @@ function insert (input, error, complete){
       error(dbError, input.bucketKey);
       return;
     }
-    complete();
+    complete(input.bucketKey);
     return;
   });
 }
